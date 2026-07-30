@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anurag — Creative Developer & Design Engineer</title>
+  <meta name="description" content="Portfolio of Anurag — Creative Developer & Design Engineer specializing in smooth canvas animations, interactive 3D experiences, and modern monochrome web apps." />
+  
+  <!-- Preconnect Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <!-- Custom Magnetic Cursor -->
+  <div id="cursor-dot" class="cursor-dot"></div>
+  <div id="cursor-ring" class="cursor-ring"></div>
+
+  <!-- Loading Overlay -->
+  <div id="loader" class="loader">
+    <div class="loader-content">
+      <div class="loader-brand">
+        <span class="brand-text">ANURAG</span>
+        <span class="brand-sub">STUDIO</span>
+      </div>
+      <div class="spinner-container">
+        <div class="spinner"></div>
+      </div>
+      <div id="loader-text" class="loader-text">Loading 0%</div>
+      <div class="progress-bar">
+        <div id="progress-fill" class="progress-fill"></div>
+      </div>
+      <p class="loader-hint">Initializing 3D frame sequence...</p>
+    </div>
+  </div>
+
+  <!-- Fixed Background Canvas for Smooth 3D Animation -->
+  <div id="canvas-container" class="canvas-container">
+    <canvas id="scroll-canvas"></canvas>
+  </div>
+
+  <!-- Main Floating Content Wrapper -->
+  <div id="app" class="app-wrapper">
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+      <div class="header-container">
+        <a href="#hero" class="logo">
+          <span class="logo-bold">ANURAG</span>
+          <span class="logo-dot"></span>
+        </a>
+
+        <nav class="desktop-nav">
+          <a href="#about" class="nav-link"><span class="nav-num">01</span> About</a>
+          <a href="#projects" class="nav-link"><span class="nav-num">02</span> Works</a>
+          <a href="#skills" class="nav-link"><span class="nav-num">03</span> Stack</a>
+          <a href="#experience" class="nav-link"><span class="nav-num">04</span> Experience</a>
+          <a href="#contact" class="nav-link"><span class="nav-num">05</span> Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <div class="status-badge">
+            <span class="pulse-dot"></span>
+            <span class="status-text">Available for Hire</span>
+          </div>
+          <button id="menu-toggle" class="menu-toggle" aria-label="Toggle Navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <div id="mobile-menu" class="mobile-menu">
+        <nav class="mobile-nav">
+          <a href="#about" class="mobile-link"><span>01</span> About</a>
+          <a href="#projects" class="mobile-link"><span>02</span> Works</a>
+          <a href="#skills" class="mobile-link"><span>03</span> Stack</a>
+          <a href="#experience" class="mobile-link"><span>04</span> Experience</a>
+          <a href="#contact" class="mobile-link"><span>05</span> Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="section hero-section">
+      <div class="container hero-container">
+        <div class="hero-eyebrow">
+          <span class="pill-tag">MONOCHROME &amp; MOTION</span>
+          <span class="frame-counter-pill">Frame: <strong id="frame-num-display">001</strong> / 156</span>
+        </div>
+
+        <h1 class="hero-title">
+          CREATIVE DEVELOPER <br />
+          <span class="outline-text">&amp; DESIGN ENGINEER</span>
+        </h1>
+
+        <p class="hero-description">
+          Building high-performance web interfaces, smooth canvas scroll animations, and interactive digital experiences with minimalist black &amp; white aesthetic.
+        </p>
+
+        <div class="hero-ctas">
+          <a href="#projects" class="btn btn-primary">
+            <span>Explore Works</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            <span>Get in Touch</span>
+          </a>
+        </div>
+
+        <div class="hero-stats-row">
+          <div class="hero-stat-item">
+            <span class="stat-num">05+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat-item">
+            <span class="stat-num">40+</span>
+            <span class="stat-label">Projects Shipped</span>
+          </div>
+          <div class="hero-stat-divider"></div>
+          <div class="hero-stat-item">
+            <span class="stat-num">60 FPS</span>
+            <span class="stat-label">Canvas Precision</span>
+          </div>
+        </div>
+
+        <div class="scroll-indicator">
+          <div class="mouse-icon">
+            <div class="mouse-wheel"></div>
+          </div>
+          <span class="scroll-text">Scroll to animate background 3D model</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        <div class="section-label">
+          <span class="label-number">01</span>
+          <span class="label-title">ABOUT ME</span>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-content">
+            <h2 class="section-heading">
+              Merging technical rigor with <span class="highlight-text">cinematic web motion</span>.
+            </h2>
+            <p class="about-lead">
+              I specialize in crafting bespoke interactive web experiences where performance, code purity, and elegant motion converge.
+            </p>
+            <p class="about-body">
+              With a deep passion for modern frontend architecture, 2D/3D HTML5 Canvas rendering, and interactive micro-interactions, I help forward-thinking teams transform static designs into living digital artifacts.
+            </p>
+
+            <div class="about-features-grid">
+              <div class="feature-card">
+                <div class="feature-num">01</div>
+                <h3 class="feature-title">Smooth Canvas &amp; 3D</h3>
+                <p class="feature-desc">Frame-by-frame scroll animations and custom rendering pipelines running at native 60fps.</p>
+              </div>
+              <div class="feature-card">
+                <div class="feature-num">02</div>
+                <h3 class="feature-title">Minimalist Design</h3>
+                <p class="feature-desc">High-contrast black &amp; white typography and crisp grid alignments for striking clarity.</p>
+              </div>
+              <div class="feature-card">
+                <div class="feature-num">03</div>
+                <h3 class="feature-title">Ultra Performance</h3>
+                <p class="feature-desc">Sub-second load times, lightweight zero-bloat code, and smooth momentum scrolling.</p>
+              </div>
+              <div class="feature-card">
+                <div class="feature-num">04</div>
+                <h3 class="feature-title">Clean Architecture</h3>
+                <p class="feature-desc">Modular, scalable TypeScript/JS codebases built to scale seamlessly over time.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Selected Projects Section -->
+    <section id="projects" class="section projects-section">
+      <div class="container">
+        <div class="section-header-flex">
+          <div class="section-label">
+            <span class="label-number">02</span>
+            <span class="label-title">SELECTED WORKS</span>
+          </div>
+
+          <!-- Filter Tabs -->
+          <div class="filter-tabs" id="project-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="interactive">Interactive 3D</button>
+            <button class="filter-btn" data-filter="web-apps">Web Apps</button>
+            <button class="filter-btn" data-filter="systems">UI Systems</button>
+          </div>
+        </div>
+
+        <h2 class="section-heading">Featured Engineering Projects</h2>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid" id="projects-grid">
+          
+          <!-- Card 1 -->
+          <article class="project-card" data-category="interactive" data-id="nexus-os">
+            <div class="card-glass">
+              <div class="project-tag-row">
+                <span class="project-category">Interactive 3D</span>
+                <span class="project-year">2026</span>
+              </div>
+              <h3 class="project-title">Nexus OS Spatial Engine</h3>
+              <p class="project-desc">3D WebGL spatial canvas with frame sequence scrubbing and fluid particle physics.</p>
+              <div class="project-tags">
+                <span class="tag">HTML5 Canvas</span>
+                <span class="tag">WebGL</span>
+                <span class="tag">Vite</span>
+              </div>
+              <button class="project-link-btn" aria-label="View Nexus OS Details">
+                <span>View Details</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="project-card" data-category="web-apps" data-id="aura-mono">
+            <div class="card-glass">
+              <div class="project-tag-row">
+                <span class="project-category">Web Apps</span>
+                <span class="project-year">2025</span>
+              </div>
+              <h3 class="project-title">Aura Monochrome Commerce</h3>
+              <p class="project-desc">High-end luxury e-commerce showcase built with zero-latency smooth scroll &amp; dark mode theme.</p>
+              <div class="project-tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">Glassmorphism</span>
+                <span class="tag">REST API</span>
+              </div>
+              <button class="project-link-btn" aria-label="View Aura Monochrome Details">
+                <span>View Details</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="project-card" data-category="web-apps" data-id="pulse-analytics">
+            <div class="card-glass">
+              <div class="project-tag-row">
+                <span class="project-category">Web Apps</span>
+                <span class="project-year">2025</span>
+              </div>
+              <h3 class="project-title">Pulse High-Frequency Analytics</h3>
+              <p class="project-desc">Real-time financial telemetry dashboard processing 60k updates/sec with zero frame drops.</p>
+              <div class="project-tags">
+                <span class="tag">TypeScript</span>
+                <span class="tag">WebSockets</span>
+                <span class="tag">Canvas2D</span>
+              </div>
+              <button class="project-link-btn" aria-label="View Pulse Analytics Details">
+                <span>View Details</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="project-card" data-category="interactive" data-id="chronos-studio">
+            <div class="card-glass">
+              <div class="project-tag-row">
+                <span class="project-category">Interactive 3D</span>
+                <span class="project-year">2024</span>
+              </div>
+              <h3 class="project-title">Chronos Audio-Visualizer</h3>
+              <p class="project-desc">Interactive sound reactive canvas animation matrix responding dynamically to audio spectrums.</p>
+              <div class="project-tags">
+                <span class="tag">Web Audio API</span>
+                <span class="tag">Canvas</span>
+                <span class="tag">Lenis</span>
+              </div>
+              <button class="project-link-btn" aria-label="View Chronos Studio Details">
+                <span>View Details</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="project-card" data-category="systems" data-id="vortex-ui">
+            <div class="card-glass">
+              <div class="project-tag-row">
+                <span class="project-category">UI Systems</span>
+                <span class="project-year">2024</span>
+              </div>
+              <h3 class="project-title">Vortex Monochrome Component Core</h3>
+              <p class="project-desc">Design token architecture and accessible UI component library crafted for dark UI applications.</p>
+              <div class="project-tags">
+                <span class="tag">Design Tokens</span>
+                <span class="tag">CSS Grid</span>
+                <span class="tag">a11y</span>
+              </div>
+              <button class="project-link-btn" aria-label="View Vortex UI Details">
+                <span>View Details</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="project-card" data-category="interactive" data-id="kinetix-scroll">
+            <div class="card-glass">
+              <div class="project-tag-row">
+                <span class="project-category">Interactive 3D</span>
+                <span class="project-year">2024</span>
+              </div>
+              <h3 class="project-title">Kinetix Scroll Motion</h3>
+              <p class="project-desc">Apple-inspired scroll-driven product rendering engine using image sequence buffer management.</p>
+              <div class="project-tags">
+                <span class="tag">Smooth Scroll</span>
+                <span class="tag">Frame Scrub</span>
+                <span class="tag">JS</span>
+              </div>
+              <button class="project-link-btn" aria-label="View Kinetix Details">
+                <span>View Details</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills & Tech Matrix -->
+    <section id="skills" class="section skills-section">
+      <div class="container">
+        <div class="section-label">
+          <span class="label-number">03</span>
+          <span class="label-title">TECHNICAL STACK &amp; EXPERTISE</span>
+        </div>
+
+        <h2 class="section-heading">Core Competencies &amp; Toolkit</h2>
+
+        <div class="skills-grid">
+          
+          <div class="skill-category-card">
+            <div class="category-header">
+              <span class="category-icon">⚡</span>
+              <h3 class="category-title">Frontend Core</h3>
+            </div>
+            <ul class="skill-list">
+              <li class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">JavaScript (ES6+)</span>
+                  <span class="skill-percent">98%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 98%;"></div></div>
+              </li>
+              <li class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">HTML5 / CSS3 Grid</span>
+                  <span class="skill-percent">95%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 95%;"></div></div>
+              </li>
+              <li class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">TypeScript</span>
+                  <span class="skill-percent">90%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+              </li>
+              <li class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Vite &amp; Build Tools</span>
+                  <span class="skill-percent">92%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 92%;"></div></div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="skill-category-card">
+            <div class="category-header">
+              <span class="category-icon">🎨</span>
+              <h3 class="category-title">Animation &amp; Canvas</h3>
+            </div>
+            <ul class="skill-list">
+              <li class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">HTML5 Canvas 2D API</span>
+                  <span class="skill-percent">96%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 96%;"></div></div>
+              </li>
+              <li class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Lenis Smooth Scroll</span>
+                  <span class="skill-percent">95%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 95%;"></div></div>
+              </li>
+              <li class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Frame Preloading &amp; Scrubbing</span>
+                  <span class="skill-percent">98%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 98%;"></div></div>
+              </li>
+              <li class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">WebGL &amp; Shaders Basics</span>
+                  <span class="skill-percent">84%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 84%;"></div></div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="skill-category-card">
+            <div class="category-header">
+              <span class="category-icon">🛠️</span>
+              <h3 class="category-title">UI Architecture</h3>
+            </div>
+            <ul class="skill-list">
+              <li class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Glassmorphism &amp; Micro-UI</span>
+                  <span class="skill-percent">95%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 95%;"></div></div>
+              </li>
+              <li class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Responsive &amp; Mobile First</span>
+                  <span class="skill-percent">98%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 98%;"></div></div>
+              </li>
+              <li class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Performance Optimization</span>
+                  <span class="skill-percent">94%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 94%;"></div></div>
+              </li>
+              <li class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Design Systems &amp; Tokens</span>
+                  <span class="skill-percent">90%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Timeline Section -->
+    <section id="experience" class="section experience-section">
+      <div class="container">
+        <div class="section-label">
+          <span class="label-number">04</span>
+          <span class="label-title">EXPERIENCE &amp; IMPACT</span>
+        </div>
+
+        <h2 class="section-heading">Career Journey</h2>
+
+        <div class="timeline">
+          
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content glass-card">
+              <div class="timeline-meta">
+                <span class="timeline-period">2024 — PRESENT</span>
+                <span class="timeline-role">Lead Creative Technologist</span>
+              </div>
+              <h3 class="timeline-company">Studio Kinetix</h3>
+              <p class="timeline-desc">
+                Architecting high-frequency 3D product websites, custom canvas animation engines, and design systems for global brands. Reduced bundle payload by 40% while delivering smooth 60fps scroll experiences.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content glass-card">
+              <div class="timeline-meta">
+                <span class="timeline-period">2022 — 2024</span>
+                <span class="timeline-role">Senior Interactive Engineer</span>
+              </div>
+              <h3 class="timeline-company">Apex Digital Lab</h3>
+              <p class="timeline-desc">
+                Engineered complex single-page applications, interactive data dashboards, and real-time canvas visualizations. Led a team of 4 engineers in migrating core web applications to modern Vite + JS architecture.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content glass-card">
+              <div class="timeline-meta">
+                <span class="timeline-period">2020 — 2022</span>
+                <span class="timeline-role">Frontend Developer &amp; UI Specialist</span>
+              </div>
+              <h3 class="timeline-company">Freelance / Creative Design Studio</h3>
+              <p class="timeline-desc">
+                Designed and built 25+ bespoke portfolio, landing page, and web application interfaces for international clients across luxury design, AI tech startups, and digital arts.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <div class="section-label">
+          <span class="label-number">05</span>
+          <span class="label-title">GET IN TOUCH</span>
+        </div>
+
+        <div class="contact-grid">
+          
+          <div class="contact-info">
+            <h2 class="contact-heading">
+              Let's create something <span class="highlight-text">extraordinary</span> together.
+            </h2>
+            <p class="contact-lead">
+              Have a project in mind, a vision to build, or want to discuss smooth canvas animations? Drop a message or copy my direct email.
+            </p>
+
+            <div class="email-copy-card">
+              <span class="email-label">DIRECT EMAIL</span>
+              <div class="email-row">
+                <span id="email-address" class="email-text">anurag.dev@studio.com</span>
+                <button id="copy-email-btn" class="btn-icon" aria-label="Copy Email to Clipboard">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                </button>
+              </div>
+              <span id="copy-feedback" class="copy-feedback">Email copied to clipboard!</span>
+            </div>
+
+            <div class="social-links">
+              <a href="https://github.com" target="_blank" rel="noopener" class="social-link">GitHub ↗</a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-link">LinkedIn ↗</a>
+              <a href="https://twitter.com" target="_blank" rel="noopener" class="social-link">X / Twitter ↗</a>
+              <a href="https://dribbble.com" target="_blank" rel="noopener" class="social-link">Dribbble ↗</a>
+            </div>
+          </div>
+
+          <div class="contact-form-container glass-card">
+            <form id="contact-form" class="contact-form" novalidate>
+              <div class="form-group">
+                <label for="form-name" class="form-label">YOUR NAME</label>
+                <input type="text" id="form-name" class="form-input" placeholder="John Doe" required />
+              </div>
+
+              <div class="form-group">
+                <label for="form-email" class="form-label">YOUR EMAIL</label>
+                <input type="email" id="form-email" class="form-input" placeholder="john@example.com" required />
+              </div>
+
+              <div class="form-group">
+                <label for="form-subject" class="form-label">PROJECT TYPE</label>
+                <select id="form-subject" class="form-select">
+                  <option value="interactive">3D Canvas / Interactive Website</option>
+                  <option value="webapp">Full Stack Web Application</option>
+                  <option value="uidesign">UI/UX &amp; Design Architecture</option>
+                  <option value="other">General Inquiry / Consultation</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="form-message" class="form-label">MESSAGE</label>
+                <textarea id="form-message" class="form-textarea" rows="4" placeholder="Tell me about your project or vision..." required></textarea>
+              </div>
+
+              <button type="submit" id="submit-btn" class="btn btn-primary btn-full">
+                <span>Send Message</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container footer-container">
+        <div class="footer-left">
+          <span class="footer-brand">ANURAG STUDIO © <span id="current-year">2026</span></span>
+          <span class="footer-sub">Monochrome Canvas Motion Portfolio</span>
+        </div>
+
+        <div class="footer-center">
+          <span class="live-clock-dot"></span>
+          <span class="live-clock-text">LOCAL TIME: <strong id="live-clock">--:--:-- IST</strong></span>
+        </div>
+
+        <div class="footer-right">
+          <a href="#hero" class="back-to-top" aria-label="Back to Top">
+            <span>Back to Top</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Interactive Project Modal -->
+  <div id="project-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-card glass-card">
+      <button id="modal-close" class="modal-close-btn" aria-label="Close modal">✕</button>
+      <div class="modal-header">
+        <span id="modal-category" class="pill-tag">Category</span>
+        <h3 id="modal-title" class="modal-title">Project Title</h3>
+      </div>
+      <div class="modal-body">
+        <p id="modal-description" class="modal-desc">Detailed project breakdown and implementation notes...</p>
+        <div class="modal-tech-stack">
+          <h4>Technologies Used</h4>
+          <div id="modal-tags" class="project-tags"></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="modal-action-btn" class="btn btn-primary">Visit Project Showcase ↗</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast" class="toast">Message sent successfully! I will reply shortly.</div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
